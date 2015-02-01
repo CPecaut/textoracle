@@ -1,17 +1,6 @@
-#from nltk.corpus import brown
-#print brown.words()[0:10]
-#print brown.tagged_words()[0:10]
-#print len(brown.words())
-#print dir(brown)
-#
-#from nltk.book import *
-#print (text1)
-#print len(text1)
-
 import random
 import os
 textslist = os.listdir('texts')
-#print textslist
 
 import os
 os.system('clear')
@@ -25,7 +14,6 @@ for x in range(0,20):
     while good_guess == 0:
     
         chosentext = random.choice(textslist)
-        #print chosentext
         
         from nltk import sent_tokenize
         text = open("texts/" + chosentext, "r")
@@ -55,15 +43,8 @@ for x in range(0,20):
         context = context.replace('\n', ' ').replace('\r', '')
         #print context     
                 
-        #print len(initialpick)
-        #context = initialpick
-        #initialpick = initialpick
-        #print initialpick
         initialpick = str(initialpick)
         initialpick = initialpick.translate(string.maketrans("\n\r", "  "))
-            
-        #" ".join(initialpick.split())
-        #print initialpick + '\n'
     
     ### Create the blanks
     
@@ -191,23 +172,7 @@ for x in range(0,20):
             #if indentcount > 4:
             #    context.insert(5, '\n')    
             
-            futnum += 1     
-                                
-            #else:
-            #    pastnum += 1
-            #    context = wholetext[(contextrand - pastnum):(contextrand + futnum)]
-            #    #print counter
-            #    #print contextrand
-            #    #print contextrand - pastnum
-            #    #print contextrand + futnum
-            #    context = ' '.join(context)
-            #    context = context.replace('\n', ' ').replace('\r', ' ')
-            #    print '\n' + context
-                    
-                        
-            ## Format doubled context
-            #context = ' '.join(context)
-            #context = context.replace('\n', ' ').replace('\r', '')
+            futnum += 1                         
     
             answer = raw_input(persons_turn + ", "+ question + ' ')    
             
